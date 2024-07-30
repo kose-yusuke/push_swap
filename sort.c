@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 00:04:21 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/03/10 13:39:51 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/03/17 10:10:33 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,14 @@ int	get_max_bit(t_node **stack_a)
 	return (bit_digit);
 }
 
-// マイナスの場合がよくわからない
-//基数ソートの実装
-void	radix_sort(t_node **stack_a, t_node **stack_b)
+void	radix_sort(t_node **stack_a, t_node **stack_b, int max_dgt)
 {
 	int	bit_digit;
-	int	max_bit_digit;
 	int	i;
 	int	len;
 
 	bit_digit = 0;
-	max_bit_digit = get_max_bit(stack_a);
-	while (max_bit_digit > bit_digit)
+	while (max_dgt > bit_digit)
 	{
 		i = 0;
 		len = (*stack_a)->len;

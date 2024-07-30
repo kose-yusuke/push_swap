@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 00:00:08 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/03/10 13:40:08 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/03/17 09:33:42 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_swap_sa(t_node **stack_a)
 	int	tmp_value;
 	int	tmp_index;
 
-	// t_node *list_first_node;
-	// t_node *list_last_node;
 	tmp_value = (*stack_a)->next->value;
 	tmp_index = (*stack_a)->next->index;
 	(*stack_a)->next->value = (*stack_a)->value;
@@ -29,14 +27,11 @@ void	ft_swap_sa(t_node **stack_a)
 	ft_printf("%s\n", "sa");
 }
 
-// stack_aと違って初期化できてないから変える必要はあるかも
 void	ft_swap_sb(t_node **stack_b)
 {
 	int	tmp_value;
 	int	tmp_index;
 
-	// t_node *list_first_node;
-	// t_node *list_last_node;
 	tmp_value = (*stack_b)->next->value;
 	tmp_index = (*stack_b)->next->index;
 	(*stack_b)->next->value = (*stack_b)->value;

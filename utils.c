@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 00:04:02 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/03/10 14:11:35 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/06/30 16:44:30 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	max_digitsize(int argc, char **argv)
 	tmp_nbr = 0;
 	while (i < argc)
 	{
-		tmp_nbr = atoi(argv[i]);
+		tmp_nbr = ft_atoi(argv[i]);
 		if (digit_len(tmp_nbr) > d_tmp)
 			d_tmp = tmp_nbr;
 		i++;

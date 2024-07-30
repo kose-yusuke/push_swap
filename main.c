@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:07:55 by ykoseki           #+#    #+#             */
-/*   Updated: 2024/03/10 14:44:05 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/06/30 17:12:08 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,8 @@ int	main(int argc, char **argv)
 	if (argc > 2 && argc < 7)
 		small_sort(&stack_a, &stack_b);
 	else if (argc > 6)
-		radix_sort(&stack_a, &stack_b);
-	// print_list(&stack_a);
+		radix_sort(&stack_a, &stack_b, get_max_bit(&stack_a));
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (1);
 }
-
-// print_list(&stack_a);

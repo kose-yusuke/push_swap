@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   compress.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:13:58 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/03/10 14:43:54 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/03/17 09:37:26 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ int	min_value_position(t_node **stack_a, int min)
 
 int	ft_compress_value(t_node **stack_a)
 {
-	int index;
-	int len;
-	int min;
-	int position;
+	int	index;
+	int	len;
+	int	min;
+	int	position;
 
 	index = 0;
 	len = (*stack_a)->len;
@@ -103,12 +103,7 @@ int	ft_compress_value(t_node **stack_a)
 		len--;
 		min = get_next_min_value(stack_a, min);
 	}
-    while ((*stack_a)->first_flag == 0)
-        *stack_a = (*stack_a)->next;
+	while ((*stack_a)->first_flag == 0)
+		*stack_a = (*stack_a)->next;
 	return (1);
 }
-
-// printf("%d\n", (*stack_a)->value);
-// 	printf("%d\n", (*stack_a)->next->value);
-//     printf("%d\n", (*stack_a)->next->next->value);
-//     printf("%d\n", (*stack_a)->next->next->next->value);

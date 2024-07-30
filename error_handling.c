@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 01:27:15 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/03/10 13:26:14 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/06/30 19:42:15 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	ft_error_handling(int argc, char **argv)
 	int	i;
 
 	i = 1;
-	if (argc == 2 && argv[1][0] == '\0')
+	if (argc == 2 && (argv[1][0] == '\0'
+		|| (argv[1][0] == '-' && argv[1][1] == '\0')))
 		return (error_message());
 	while (i < argc)
 	{

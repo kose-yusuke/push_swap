@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:41:59 by ykoseki           #+#    #+#             */
-/*   Updated: 2024/03/10 14:39:36 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/03/17 10:11:00 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,15 @@ int					five_sort(t_node **stack_a, t_node **stack_b);
 int					print_list(t_node **stack_a);
 int					get_max(t_node **stack_a);
 int					get_max_bit(t_node **stack_a);
-void				radix_sort(t_node **stack_a, t_node **stack_b);
+void				radix_sort(t_node **stack_a, t_node **stack_b, int max_dgt);
 int					ft_error_handling(int argc, char **argv);
 int					ft_isunique(int argc, char **argv, char *str, int index);
 int					ft_isint(char *argv);
 void				ft_free_stack(t_node **stack_a);
 void				ft_free(char **str);
 int					ft_compress_value(t_node **stack_a);
+void				ft_push_helper(t_node **stack);
+void				ft_push_helper2(t_node **stack);
+void				ft_sa_and_ra(t_node **a);
 
 #endif

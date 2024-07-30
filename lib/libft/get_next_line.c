@@ -6,7 +6,7 @@
 /*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 23:18:11 by ykoseki           #+#    #+#             */
-/*   Updated: 2023/11/09 23:06:35 by ykoseki          ###   ########.fr       */
+/*   Updated: 2024/06/30 13:47:11 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*all_free(char *line, char *buf)
 int	vsnorm(char **line, char **rest)
 {
 	free(*rest);
-	 *rest = NULL;
+	*rest = NULL;
 	*line = NULL;
 	return (1);
 }
@@ -97,7 +97,7 @@ char	*get_next_line(int fd)
 		if (rest[fd])
 		{
 			free(rest[fd]);
-			 rest[fd] = NULL;
+			rest[fd] = NULL;
 		}
 		return (NULL);
 	}

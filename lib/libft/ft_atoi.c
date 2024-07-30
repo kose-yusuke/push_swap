@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 17:29:25 by ykoseki           #+#    #+#             */
-/*   Updated: 2024/03/10 13:20:52 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/06/30 16:44:42 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,3 @@ long	ft_atoi(const char *str)
 	}
 	return (type * num);
 }
-
-// int main()
-// {
-// 	printf("%d",atoi("-1"));
-// 	printf("%d",ft_atoi("-1"));
-// 	printf("%d",atoi("-7"));
-// 	printf("%d",ft_atoi("-7"));
-// 	return (0);
-// }

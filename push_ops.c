@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
+/*   By: ykoseki <ykoseki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 23:59:34 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/03/09 16:17:56 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/03/17 09:56:46 by ykoseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,23 @@
 
 //行数制限超えてるから調整する(共通部分を関数で逃せばいけそう.
 // //paの実装-bの一番上をaの一番上にpushする
+
+void	ft_push_helper(t_node **stack)
+{
+	(*stack)->next->len = (*stack)->len;
+	*stack = (*stack)->next;
+	(*stack)->prev = (*stack)->prev->prev;
+	(*stack)->prev->next = *stack;
+	(*stack)->len--;
+}
+
+void	ft_push_helper2(t_node **stack)
+{
+	(*stack)->next = *stack;
+	(*stack)->prev = *stack;
+	(*stack)->len = 0;
+}
+
 void	ft_swap_pa(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*tmp_pusher;
@@ -22,21 +39,13 @@ void	ft_swap_pa(t_node **stack_a, t_node **stack_b)
 		return ;
 	tmp_pusher = *stack_b;
 	if ((*stack_b)->len > 1)
-	{
-		(*stack_b)->next->len = (*stack_b)->len;
-		*stack_b = (*stack_b)->next;
-		(*stack_b)->prev = (*stack_b)->prev->prev;
-		(*stack_b)->prev->next = *stack_b;
-		(*stack_b)->len--;
-	}
+		ft_push_helper(stack_b);
 	else
 		*stack_b = NULL;
 	if (*stack_a == NULL)
 	{
 		*stack_a = tmp_pusher;
-		(*stack_a)->next = *stack_a;
-		(*stack_a)->prev = *stack_a;
-		(*stack_a)->len = 0;
+		ft_push_helper2(stack_a);
 	}
 	else
 	{
@@ -54,27 +63,19 @@ void	ft_swap_pa(t_node **stack_a, t_node **stack_b)
 // //pbの実装-aの一番上をbの一番上にpushする
 void	ft_swap_pb(t_node **stack_a, t_node **stack_b)
 {
-	t_node *tmp_pusher;
+	t_node	*tmp_pusher;
 
 	if (*stack_a == NULL || stack_a == NULL)
 		return ;
 	tmp_pusher = *stack_a;
 	if ((*stack_a)->len > 1)
-	{
-		(*stack_a)->next->len = (*stack_a)->len;
-		*stack_a = (*stack_a)->next;
-		(*stack_a)->prev = (*stack_a)->prev->prev;
-		(*stack_a)->prev->next = *stack_a;
-		(*stack_a)->len--;
-	}
+		ft_push_helper(stack_a);
 	else
 		*stack_a = NULL;
 	if (*stack_b == NULL)
 	{
 		*stack_b = tmp_pusher;
-		(*stack_b)->next = *stack_b;
-		(*stack_b)->prev = *stack_b;
-		(*stack_b)->len = 0;
+		ft_push_helper2(stack_b);
 	}
 	else
 	{
